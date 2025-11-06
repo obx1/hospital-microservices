@@ -9,9 +9,9 @@
 
     <modules>
         <module>config-server</module>
-<!--        <module>discovery-server</module>-->
-<!--        <module>api-gateway</module>-->
-<!--        <module>patient-service</module>-->
+        <module>discovery-server</module>
+        <module>api-gateway</module>
+        <module>patients-service</module>
     </modules>
 
     <properties>
@@ -36,4 +36,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
 </project>
