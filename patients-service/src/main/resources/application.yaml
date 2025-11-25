@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: patients-service
   datasource:
     url: jdbc:mysql://localhost:3306/hospital?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
@@ -11,11 +13,26 @@ spring:
     open-in-view: false
   cloud:
     config:
-          enabled: false
+      enabled: false
 
 server:
   port: 8081
 
 eureka:
   client:
-    enabled: false
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# —— Swagger / springdoc ——
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  packages-to-scan: ma.you.hospital.patients.web
+  paths-to-match: /api/**, /hello
+
+logging:
+  level:
+    org.springdoc: DEBUG

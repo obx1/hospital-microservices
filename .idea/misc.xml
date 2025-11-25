@@ -10,6 +10,9 @@
         <option value="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/../../api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/patients-service/pom.xml" />
+        <option value="$PROJECT_DIR$/doctors-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../appointments-service/pom.xml" />
+        <option value="$PROJECT_DIR$/appointments-service/pom.xml" />
       </list>
     </option>
   </component>

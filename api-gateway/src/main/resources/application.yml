@@ -1,11 +1,57 @@
-server:
-  port: 8888
 spring:
   application:
     name: api-gateway
   cloud:
     gateway:
-      discovery.locator.enabled: true
-      discovery.locator.lower-case-service-id: true
+      routes:
+        # API doctors (tes endpoints fonctionnels /api/doctors/**)
+        - id: doctors
+          uri: lb://doctors-service
+          predicates:
+            - Path=/api/doctors/**
+
+        # Swagger/OpenAPI - DOCTORS
+        - id: doctors-openapi-root
+          uri: lb://doctors-service
+          predicates:
+            - Path=/v3/api-docs
+        - id: doctors-openapi-all
+          uri: lb://doctors-service
+          predicates:
+            - Path=/v3/api-docs/**
+        - id: doctors-openapi-config
+          uri: lb://doctors-service
+          predicates:
+            - Path=/v3/api-docs/swagger-config
+        - id: doctors-swagger-ui-html
+          uri: lb://doctors-service
+          predicates:
+            - Path=/swagger-ui.html
+        - id: doctors-swagger-ui-assets
+          uri: lb://doctors-service
+          predicates:
+            - Path=/swagger-ui/**
+
+
+        - id: appointments
+          uri: lb://appointments-service
+          predicates:
+              - Path=/api/appointments/**
+
+      discovery:
+        locator:
+          enabled: false
+
 eureka:
-  client.service-url.defaultZone: http://localhost:8761/eureka/
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
