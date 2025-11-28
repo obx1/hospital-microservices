@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native   # on utilise un dossier local (native backend)
+  cloud:
+    config:
+      server:
+        native:
+          # Dossier où on a mis les YAML de config
+          search-locations: C:\Users\HP\Downloads\msconfig\hospital-microservices\config-repo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

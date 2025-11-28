@@ -1,7 +1,7 @@
-package ma.you.hospital.patients.service;
+package ma.you.hospital.patients.services;
 
 import ma.you.hospital.patients.domain.Patient;
-import ma.you.hospital.patients.repository.PatientRepository;
+import ma.you.hospital.patients.repositories.PatientRepository;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

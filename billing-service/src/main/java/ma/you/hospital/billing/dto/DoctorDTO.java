@@ -1,4 +1,4 @@
-package ma.you.hospital.billing.model;
+package ma.you.hospital.billing.dto;
 
 import lombok.Data;
 

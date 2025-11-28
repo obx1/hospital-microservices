@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import ma.you.hospital.appointments.clients.DoctorRestClient;
 import ma.you.hospital.appointments.clients.PatientRestClient;
 import ma.you.hospital.appointments.dto.AppointmentRequest;
-import ma.you.hospital.appointments.entities.Appointment;
+import ma.you.hospital.appointments.domain.Appointment;
 import ma.you.hospital.appointments.repositories.AppointmentRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

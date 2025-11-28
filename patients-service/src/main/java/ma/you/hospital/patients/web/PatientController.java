@@ -1,5 +1,5 @@
 package ma.you.hospital.patients.web;
-import ma.you.hospital.patients.service.PatientService;
+import ma.you.hospital.patients.services.PatientService;
 import ma.you.hospital.patients.web.dto.PatientRequest;
 import ma.you.hospital.patients.web.dto.PatientResponse;
 import org.springframework.data.domain.*;

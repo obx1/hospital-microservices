@@ -1,14 +1,14 @@
 server:
-  port: 8081
+  port: 8084
 
 spring:
   application:
-    name: patients-service
+    name: appointments-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/patients-db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/appointments-db?createDatabaseIfNotExist=true
     username: root
-    password: root           # mets ton mot de passe MySQL ici si tu en as un
+    password: root         # adapte si besoin
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

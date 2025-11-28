@@ -1,4 +1,4 @@
-package ma.you.hospital.billing.entities;
+package ma.you.hospital.billing.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -5,13 +5,10 @@ spring:
   application:
     name: billing-service
 
-  config:
-    import: "optional:configserver:http://localhost:8888"
-
   datasource:
-    url: jdbc:mysql://localhost:3306/hospital_billing?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/hospital_billing?createDatabaseIfNotExist=true&useSSL=false
     username: root
-    password: root     # adapte si besoin
+    password: root        # adapte avec ton vrai mot de passe MySQL
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

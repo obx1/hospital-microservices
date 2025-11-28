@@ -1,4 +1,4 @@
-package ma.you.hospital.patients.repository;
+package ma.you.hospital.patients.repositories;
 
 import ma.you.hospital.patients.domain.Patient;
 import org.springframework.data.domain.*;

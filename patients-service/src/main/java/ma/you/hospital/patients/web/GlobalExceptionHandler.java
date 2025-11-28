@@ -1,6 +1,6 @@
 package ma.you.hospital.patients.web;
 
-import ma.you.hospital.patients.service.*;
+import ma.you.hospital.patients.services.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;

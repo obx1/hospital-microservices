@@ -1,38 +1,10 @@
 spring:
   application:
     name: patients-service
-  datasource:
-    url: jdbc:mysql://localhost:3306/hospital?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate.format_sql: true
-    open-in-view: false
-  cloud:
-    config:
-      enabled: false
-
-server:
-  port: 8081
+  config:
+    import: "optional:configserver:http://localhost:8888"
 
 eureka:
   client:
-    enabled: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
-# —— Swagger / springdoc ——
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-  packages-to-scan: ma.you.hospital.patients.web
-  paths-to-match: /api/**, /hello
-
-logging:
-  level:
-    org.springdoc: DEBUG

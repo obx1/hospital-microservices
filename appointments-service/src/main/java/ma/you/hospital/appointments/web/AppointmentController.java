@@ -2,7 +2,7 @@ package ma.you.hospital.appointments.web;
 
 import lombok.RequiredArgsConstructor;
 import ma.you.hospital.appointments.dto.AppointmentRequest;
-import ma.you.hospital.appointments.entities.Appointment;
+import ma.you.hospital.appointments.domain.Appointment;
 import ma.you.hospital.appointments.services.AppointmentService;
 import org.springframework.web.bind.annotation.*;
 

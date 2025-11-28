@@ -1,6 +1,6 @@
-package ma.you.hospital.billing.openfeign;
+package ma.you.hospital.billing.clients;
 
-import ma.you.hospital.billing.model.DoctorDTO;
+import ma.you.hospital.billing.dto.DoctorDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

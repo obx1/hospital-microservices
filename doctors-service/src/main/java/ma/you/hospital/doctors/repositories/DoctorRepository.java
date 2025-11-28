@@ -1,4 +1,4 @@
-package ma.you.hospital.doctors.repository;
+package ma.you.hospital.doctors.repositories;
 
 import ma.you.hospital.doctors.domain.Doctor;
 import org.springframework.data.jpa.repository.JpaRepository;

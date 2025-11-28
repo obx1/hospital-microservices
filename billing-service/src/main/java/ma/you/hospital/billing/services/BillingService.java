@@ -1,13 +1,13 @@
 package ma.you.hospital.billing.services;
 
 import lombok.RequiredArgsConstructor;
-import ma.you.hospital.billing.entities.Bill;
-import ma.you.hospital.billing.model.AppointmentDTO;
-import ma.you.hospital.billing.model.DoctorDTO;
-import ma.you.hospital.billing.model.PatientDTO;
-import ma.you.hospital.billing.openfeign.AppointmentRestClient;
-import ma.you.hospital.billing.openfeign.DoctorRestClient;
-import ma.you.hospital.billing.openfeign.PatientRestClient;
+import ma.you.hospital.billing.domain.Bill;
+import ma.you.hospital.billing.dto.AppointmentDTO;
+import ma.you.hospital.billing.dto.DoctorDTO;
+import ma.you.hospital.billing.dto.PatientDTO;
+import ma.you.hospital.billing.clients.AppointmentRestClient;
+import ma.you.hospital.billing.clients.DoctorRestClient;
+import ma.you.hospital.billing.clients.PatientRestClient;
 import ma.you.hospital.billing.repositories.BillRepository;
 import ma.you.hospital.billing.web.dto.BillRequestDTO;
 import ma.you.hospital.billing.web.dto.BillResponseDTO;

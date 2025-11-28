@@ -1,4 +1,4 @@
-package ma.you.hospital.doctors.web.dto;
+package ma.you.hospital.doctors.dto;
 
 import java.time.Instant;
 
