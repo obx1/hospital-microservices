@@ -7,6 +7,8 @@ import ma.you.hospital.appointments.dto.AppointmentRequest;
 import ma.you.hospital.appointments.entities.Appointment;
 import ma.you.hospital.appointments.repositories.AppointmentRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
@@ -40,5 +42,16 @@ public class AppointmentService {
 
     public List<Appointment> getAll() {
         return appointmentRepository.findAll();
+    }
+
+    // ✅ NOUVELLE MÉTHODE UTILISÉE PAR LE CONTROLLER ET PAR BILLING-SERVICE
+    public Appointment getById(Long id) {
+        return appointmentRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResponseStatusException(
+                                HttpStatus.NOT_FOUND,
+                                "Appointment not found with id " + id
+                        )
+                );
     }
 }

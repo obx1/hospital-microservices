@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/api-gateway/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/appointments-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/billing-service/billing-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/billing-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discovery-server/src/main/java" charset="UTF-8" />

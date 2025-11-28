@@ -12,6 +12,7 @@
         <module>discovery-server</module>
         <module>api-gateway</module>
         <module>patients-service</module>
+        <module>billing-service</module>
     </modules>
 
     <properties>
@@ -40,6 +41,19 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
         </dependency>
     </dependencies>
 </project>

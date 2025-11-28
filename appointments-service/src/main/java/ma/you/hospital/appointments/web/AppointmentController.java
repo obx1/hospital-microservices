@@ -24,4 +24,10 @@ public class AppointmentController {
     public List<Appointment> all() {
         return appointmentService.getAll();
     }
+
+    // ✅ ENDPOINT QUI MANQUAIT
+    @GetMapping("/{id}")
+    public Appointment getById(@PathVariable Long id) {
+        return appointmentService.getById(id);
+    }
 }
