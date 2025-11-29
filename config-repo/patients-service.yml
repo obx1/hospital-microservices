@@ -6,9 +6,9 @@ spring:
     name: patients-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/patients-db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/patients-db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
     username: root
-    password: root      # si tu as un mot de passe, mets-le ici
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

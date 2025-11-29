@@ -2,17 +2,40 @@ server:
   port: 9999
 
 spring:
-  application:
-    name: api-gateway
-
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      server:
+        webflux:
+          routes:
+            # 1) PATIENTS
+            - id: patients-route
+              uri: lb://PATIENTS-SERVICE
+              predicates:
+                - Path=/patients/**              # ce que le client appelle
+              filters:
+                # /patients/1  ->  /api/patients/1 vers le microservice
+                - RewritePath=/patients/?(?<segment>.*), /api/patients/${segment}
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+            # 2) DOCTORS
+            - id: doctors-route
+              uri: lb://DOCTORS-SERVICE
+              predicates:
+                - Path=/doctors/**
+              filters:
+                - RewritePath=/doctors/?(?<segment>.*), /api/doctors/${segment}
+
+            # 3) APPOINTMENTS
+            - id: appointments-route
+              uri: lb://APPOINTMENTS-SERVICE
+              predicates:
+                - Path=/appointments/**
+              filters:
+                - RewritePath=/appointments/?(?<segment>.*), /appointments/${segment}
+
+            # 4) BILLING
+            - id: billing-route
+              uri: lb://BILLING-SERVICE
+              predicates:
+                - Path=/billing/**
+              filters:
+                - RewritePath=/billing/?(?<segment>.*), /api/bills/${segment}

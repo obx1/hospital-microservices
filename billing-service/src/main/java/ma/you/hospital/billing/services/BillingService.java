@@ -1,5 +1,6 @@
 package ma.you.hospital.billing.services;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import ma.you.hospital.billing.domain.Bill;
 import ma.you.hospital.billing.dto.AppointmentDTO;
@@ -26,6 +27,9 @@ public class BillingService {
     private final PatientRestClient patientRestClient;
     private final AppointmentRestClient appointmentRestClient;
 
+    // -----------------------
+    // Création de facture
+    // -----------------------
     public BillResponseDTO createBill(BillRequestDTO request) {
 
         // Récupérer le rendez-vous
@@ -53,6 +57,10 @@ public class BillingService {
                 .build();
     }
 
+    // -----------------------
+    // Lecture : toutes les factures
+    // -----------------------
+    @CircuitBreaker(name = "billingService", fallbackMethod = "getAllBillsFallback")
     public List<BillResponseDTO> getAllBills() {
         return billRepository.findAll().stream().map(bill -> {
             DoctorDTO doctor = doctorRestClient.getDoctorById(bill.getDoctorId());
@@ -66,8 +74,27 @@ public class BillingService {
         }).collect(Collectors.toList());
     }
 
+    /**
+     * Fallback de getAllBills : si un microservice externe (patients/doctors) est down,
+     * on renvoie quand même la liste des factures, mais SANS les détails patient/doctor.
+     */
+    private List<BillResponseDTO> getAllBillsFallback(Throwable ex) {
+        return billRepository.findAll().stream()
+                .map(bill -> BillResponseDTO.builder()
+                        .bill(bill)
+                        .doctor(null)   // infos indisponibles
+                        .patient(null)  // infos indisponibles
+                        .build())
+                .collect(Collectors.toList());
+    }
+
+    // -----------------------
+    // Lecture : facture par id
+    // -----------------------
+    @CircuitBreaker(name = "billingService", fallbackMethod = "getBillByIdFallback")
     public BillResponseDTO getBillById(Long id) {
         Bill bill = billRepository.findById(id).orElseThrow();
+
         DoctorDTO doctor = doctorRestClient.getDoctorById(bill.getDoctorId());
         PatientDTO patient = patientRestClient.getPatientById(bill.getPatientId());
 
@@ -75,6 +102,20 @@ public class BillingService {
                 .bill(bill)
                 .doctor(doctor)
                 .patient(patient)
+                .build();
+    }
+
+    /**
+     * Fallback de getBillById : si patient-service ou doctors-service est KO,
+     * on retourne la facture seule, sans les détails externes.
+     */
+    private BillResponseDTO getBillByIdFallback(Long id, Throwable ex) {
+        Bill bill = billRepository.findById(id).orElseThrow();
+
+        return BillResponseDTO.builder()
+                .bill(bill)
+                .doctor(null)
+                .patient(null)
                 .build();
     }
 }
