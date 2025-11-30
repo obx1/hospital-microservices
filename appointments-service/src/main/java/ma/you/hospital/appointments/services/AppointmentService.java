@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -32,8 +34,8 @@ public class AppointmentService {
         Appointment ap = Appointment.builder()
                 .doctorId(request.getDoctorId())
                 .patientId(request.getPatientId())
-                .date(request.getDate())
-                .time(request.getTime())
+                .date(LocalDate.parse(request.getDate()))
+                .time(LocalTime.parse(request.getTime()))
                 .status("CONFIRMED")
                 .build();
 

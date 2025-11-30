@@ -19,3 +19,8 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
+  batch:
+    jdbc:
+        initialize-schema: always   # crée les tables BATCH_*
+    job:
+        enabled: false              # on ne lance pas automatiquement au démarrage
