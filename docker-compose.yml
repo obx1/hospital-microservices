@@ -1,0 +1,100 @@
+version: "3.9"
+
+services:
+  # =========================
+  # Base de données PATIENTS
+  # =========================
+  patients-db:
+    image: mysql:8.4
+    container_name: patients-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hospital_patients
+      MYSQL_USER: hospital
+      MYSQL_PASSWORD: hospital
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/patients/data:/var/lib/mysql
+      - ./db/patients/init:/docker-entrypoint-initdb.d
+    networks:
+      - hospital-net
+
+  # =========================
+  # Base de données DOCTORS
+  # =========================
+  doctors-db:
+    image: mysql:8.4
+    container_name: doctors-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hospital_doctors
+      MYSQL_USER: hospital
+      MYSQL_PASSWORD: hospital
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./db/doctors/data:/var/lib/mysql
+      - ./db/doctors/init:/docker-entrypoint-initdb.d
+    networks:
+      - hospital-net
+
+  # =========================
+  # Base de données APPOINTMENTS
+  # =========================
+  appointments-db:
+    image: mysql:8.4
+    container_name: appointments-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hospital_appointments
+      MYSQL_USER: hospital
+      MYSQL_PASSWORD: hospital
+    ports:
+      - "3309:3306"
+    volumes:
+      - ./db/appointments/data:/var/lib/mysql
+      - ./db/appointments/init:/docker-entrypoint-initdb.d
+    networks:
+      - hospital-net
+
+  # =========================
+  # Base de données BILLING
+  # =========================
+  billing-db:
+    image: mysql:8.4
+    container_name: billing-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hospital_billing
+      MYSQL_USER: hospital
+      MYSQL_PASSWORD: hospital
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./db/billing/data:/var/lib/mysql
+      - ./db/billing/init:/docker-entrypoint-initdb.d
+    networks:
+      - hospital-net
+
+  # =========================
+  # PhpMyAdmin (optionnel)
+  # =========================
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: hospital-phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_ARBITRARY: 1
+    ports:
+      - "8081:80"
+    networks:
+      - hospital-net
+
+networks:
+  hospital-net:
+    driver: bridge
