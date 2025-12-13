@@ -1,4 +1,4 @@
-package ma.you.hospital.config;
+package ma.you.hospital.config_server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
