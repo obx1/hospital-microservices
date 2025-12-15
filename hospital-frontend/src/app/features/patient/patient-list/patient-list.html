@@ -1,0 +1,35 @@
+<h2>Liste des Patients</h2>
+
+<div class="actions">
+  <button routerLink="/patient/create" class="btn-primary">
+    Ajouter un patient
+  </button>
+</div>
+
+<div class="list-container">
+
+  <!-- Empty State -->
+  <div *ngIf="empty" class="empty-message">
+    Aucun patient disponible.
+  </div>
+
+  <!-- Patient Cards -->
+  <div *ngFor="let p of patients" class="list-item">
+    <div class="info">
+      <h3>{{ p.firstName }} {{ p.lastName }}</h3>
+      <p>Email : {{ p.email }}</p>
+      <p>Téléphone : {{ p.phone }}</p>
+    </div>
+
+    <div class="item-actions">
+      <button [routerLink]="['/patient/detail', p.id]" class="btn-primary">
+        Voir
+      </button>
+
+      <button [routerLink]="['/patient/delete', p.id]" class="btn-danger">
+        Supprimer
+      </button>
+    </div>
+  </div>
+
+</div>

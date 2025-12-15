@@ -1,0 +1,30 @@
+<h2>Créer une Facture</h2>
+
+<div class="form-container">
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label>Nom Patient :</label>
+      <input type="text" [(ngModel)]="facture.patient" name="patient" class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label>Montant (DH) :</label>
+      <input type="number" [(ngModel)]="facture.amount" name="amount" class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label>Date :</label>
+      <input type="date" [(ngModel)]="facture.date" name="date" class="form-input">
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="btn-primary">
+        Enregistrer
+      </button>
+
+      <button type="button" class="btn-cancel" routerLink="/facture">
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>

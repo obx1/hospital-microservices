@@ -1,0 +1,40 @@
+<h2>Détails du dossier</h2>
+
+<div class="detail-container">
+
+  <div class="detail-item">
+    <span class="label">ID :</span>
+    <span>{{ dossier.id }}</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="label">Nom :</span>
+    <span>{{ dossier.name }}</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="label">Date de création :</span>
+    <span>{{ dossier.createdAt }}</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="label">Statut :</span>
+    <span>{{ dossier.status }}</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="label">Nombre de documents :</span>
+    <span>{{ dossier.documents.length }}</span>
+  </div>
+
+  <div class="documents-list" *ngIf="dossier.documents.length > 0">
+    <h3>Documents</h3>
+    <ul>
+      <li *ngFor="let doc of dossier.documents">
+        {{ doc }}
+      </li>
+    </ul>
+  </div>
+
+  <a class="back" routerLink="/dossier">Retour</a>
+</div>

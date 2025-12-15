@@ -1,0 +1,28 @@
+<h2>Annuler le rendez-vous</h2>
+
+<div class="cancel-container">
+  <div class="warning-card">
+    <p class="warning-text">
+      Voulez-vous vraiment annuler ce rendez-vous ?
+    </p>
+    <p class="warning-subtext">
+      Le patient sera notifié de l'annulation.
+    </p>
+  </div>
+
+  <div class="buttons">
+    <button class="btn-warning"
+            (click)="confirm()"
+            [disabled]="loading">
+      {{ loading ? 'Annulation...' : 'Oui, annuler' }}
+    </button>
+
+    <button class="btn-cancel" routerLink="/rdv">
+      Retour
+    </button>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<h2>Liste des Rendez-vous</h2>
+
+<div class="actions">
+  <button routerLink="/rdv/create" class="btn-primary">
+    Créer un RDV
+  </button>
+</div>
+
+<div class="list-container">
+
+  <!-- Empty State -->
+  <div *ngIf="empty" class="empty-message">
+    Aucun rendez-vous disponible.
+  </div>
+
+  <!-- RDV Cards -->
+  <div class="list-item" *ngFor="let r of rdvs">
+
+    <div class="info">
+      <h3>{{ r.date }} - {{ r.time }}</h3>
+      <p>Patient ID : {{ r.patientId }}</p>
+      <p>Médecin ID : {{ r.doctorId }}</p>
+
+      <p class="status"
+         [class.confirmed]="r.status === 'CONFIRMED'"
+         [class.pending]="r.status === 'PENDING'">
+        Statut : {{ r.status }}
+      </p>
+    </div>
+
+    <div class="item-actions">
+      <button [routerLink]="['/rdv/edit', r.id]" class="btn-primary">
+        Modifier
+      </button>
+
+      <button [routerLink]="['/rdv/cancel', r.id]" class="btn-warning">
+        Annuler
+      </button>
+
+      <button [routerLink]="['/rdv/delete', r.id]" class="btn-danger">
+        Supprimer
+      </button>
+    </div>
+
+  </div>
+
+</div>

@@ -4,6 +4,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
@@ -20,6 +21,16 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="temurin-21" project-jdk-type="JavaSDK">
+=======
+        <option value="$PROJECT_DIR$/hospital-microservices/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/doctors-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/appointments-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/login-service/login-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23 (2)" project-jdk-type="JavaSDK">
+>>>>>>> e43456b (Initial commit)
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

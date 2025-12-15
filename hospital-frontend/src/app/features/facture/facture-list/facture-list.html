@@ -1,0 +1,36 @@
+<h2>Liste des Factures</h2>
+
+<div class="actions" *ngIf="role !== 'patient'">
+  <button routerLink="/facture/create" class="btn-primary">
+    Créer une Facture
+  </button>
+</div>
+
+<div class="list-container">
+  <!-- Empty state -->
+  <div *ngIf="factures.length === 0" class="empty-message">
+    Aucune facture disponible.
+  </div>
+
+  <!-- Facture cards -->
+  <div class="list-item" *ngFor="let f of factures">
+    <div class="info">
+      <h3>Facture #{{ f.id }}</h3>
+      <p>Patient : {{ f.patient }}</p>
+      <p>Montant : {{ f.amount }} DH</p>
+      <p>Date : {{ f.date }}</p>
+    </div>
+
+    <div class="item-actions">
+      <button [routerLink]="['/facture/generate', f.id]" class="btn-view">
+        Générer
+      </button>
+      <button
+        *ngIf="role !== 'patient'"
+        [routerLink]="['/facture/delete', f.id]"
+        class="btn-danger">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>

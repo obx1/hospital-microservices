@@ -1,0 +1,59 @@
+<h2>Ajouter un Patient</h2>
+
+<div class="form-container">
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label>Prénom :</label>
+      <input type="text" [(ngModel)]="patient.firstName" name="firstName" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label>Nom :</label>
+      <input type="text" [(ngModel)]="patient.lastName" name="lastName" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label>Genre :</label>
+      <select [(ngModel)]="patient.gender" name="gender" class="form-input" required>
+        <option value="">Sélectionner...</option>
+        <option value="MALE">Homme</option>
+        <option value="FEMALE">Femme</option>
+        <option value="OTHER">Autre</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Date de naissance :</label>
+      <input type="date" [(ngModel)]="patient.birthDate" name="birthDate" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label>Email :</label>
+      <input type="email" [(ngModel)]="patient.email" name="email" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label>Téléphone :</label>
+      <input type="tel" [(ngModel)]="patient.phone" name="phone" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label>Adresse :</label>
+      <textarea [(ngModel)]="patient.address" name="address" class="form-input" rows="3" required></textarea>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="btn-primary" [disabled]="loading">
+        {{ loading ? 'Enregistrement...' : 'Ajouter' }}
+      </button>
+
+      <button type="button" routerLink="/patient" class="btn-cancel">
+        Retour
+      </button>
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+  </form>
+</div>

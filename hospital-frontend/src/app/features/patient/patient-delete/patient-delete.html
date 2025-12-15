@@ -1,0 +1,37 @@
+<h2>Supprimer le patient</h2>
+
+<div class="delete-container">
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-message">
+    Chargement...
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error && !loading" class="error-message">
+    {{ error }}
+    <button routerLink="/patient" class="btn-cancel">Retour</button>
+  </div>
+
+  <!-- Confirmation -->
+  <div *ngIf="patient && !loading">
+    <div class="warning-card">
+      <p class="warning-text">
+        Voulez-vous vraiment supprimer le patient
+        <strong>{{ patient.firstName }} {{ patient.lastName }}</strong> (ID: {{ patient.id }}) ?
+      </p>
+      <p class="warning-subtext">Cette action est irréversible.</p>
+    </div>
+
+    <div class="buttons">
+      <button (click)="confirmDelete()" class="btn-danger" [disabled]="deleting">
+        {{ deleting ? 'Suppression...' : 'Supprimer' }}
+      </button>
+
+      <button routerLink="/patient" class="btn-cancel" [disabled]="deleting">
+        Annuler
+      </button>
+    </div>
+  </div>
+
+</div>

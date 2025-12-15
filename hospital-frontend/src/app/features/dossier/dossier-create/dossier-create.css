@@ -1,0 +1,67 @@
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  gap: 14px;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color .2s;
+}
+
+input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button.save {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+button.save:hover {
+  background-color: #145ca3;
+}
+
+a.cancel {
+  display: inline-block;
+  background-color: #777;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color .2s;
+}
+
+a.cancel:hover {
+  background-color: #555;
+}

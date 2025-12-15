@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/api-gateway/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/appointments-service/src/main/java" charset="UTF-8" />
@@ -15,5 +16,14 @@
     <file url="file://$PROJECT_DIR$/patients-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/hospital-microservices/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hospital-microservices/appointments-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hospital-microservices/billing-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hospital-microservices/discovery-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hospital-microservices/doctors-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hospital-microservices/login-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hospital-microservices/patients-service/src/main/java" charset="UTF-8" />
+>>>>>>> e43456b (Initial commit)
   </component>
 </project>

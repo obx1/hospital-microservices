@@ -1,0 +1,93 @@
+<h2>Créer un rendez-vous</h2>
+
+<div class="form-container">
+  <form (ngSubmit)="create()">
+
+    <!-- Patient dropdown -->
+    <div class="form-group">
+      <label>Patient :</label>
+      <select
+        [(ngModel)]="form.patientId"
+        name="patientId"
+        class="form-input"
+        required
+      >
+        <option [ngValue]="0" disabled>-- Sélectionner un patient --</option>
+        <option *ngFor="let p of patients" [ngValue]="p.id">
+          {{ p.firstName }} {{ p.lastName }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Doctor dropdown -->
+    <div class="form-group">
+      <label>Médecin :</label>
+      <select
+        [(ngModel)]="form.doctorId"
+        name="doctorId"
+        class="form-input"
+        required
+      >
+        <option [ngValue]="0" disabled>-- Sélectionner un médecin --</option>
+        <option *ngFor="let d of doctors" [ngValue]="d.id">
+          {{ d.firstName }} {{ d.lastName }} — {{ d.specialty }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Date -->
+    <div class="form-group">
+      <label>Date :</label>
+      <input
+        type="date"
+        [(ngModel)]="form.date"
+        name="date"
+        class="form-input"
+        required
+      >
+    </div>
+
+    <!-- Time -->
+    <div class="form-group">
+      <label>Heure :</label>
+      <input
+        type="time"
+        [(ngModel)]="form.time"
+        name="time"
+        class="form-input"
+        required
+      >
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label>Status :</label>
+      <select
+        [(ngModel)]="form.status"
+        name="status"
+        class="form-input"
+      >
+        <option value="SCHEDULED">Programmé</option>
+        <option value="CANCELLED">Annulé</option>
+        <option value="DONE">Terminé</option>
+      </select>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button type="submit" class="btn-primary" [disabled]="loading">
+        {{ loading ? 'Création...' : 'Créer' }}
+      </button>
+
+      <button type="button" class="btn-cancel" routerLink="/rdv">
+        Annuler
+      </button>
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+
+  </form>
+</div>

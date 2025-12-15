@@ -1,0 +1,31 @@
+<h2>Comptes Utilisateurs</h2>
+
+<div class="actions">
+  <button routerLink="/accounts/create" class="btn-primary">
+    Créer un compte
+  </button>
+</div>
+
+<div class="list-container">
+  <!-- Empty state -->
+  <div *ngIf="accounts.length === 0" class="empty-message">
+    Aucun compte disponible.
+  </div>
+
+  <!-- Account cards -->
+  <div class="list-item" *ngFor="let acc of accounts">
+    <div class="info">
+      <h3>{{ acc.username }}</h3>
+      <p>Rôle : {{ acc.role }}</p>
+    </div>
+
+    <div class="item-actions">
+      <button [routerLink]="['/accounts/edit', acc.id]" class="btn-primary">
+        Modifier
+      </button>
+      <button [routerLink]="['/accounts/delete', acc.id]" class="btn-danger">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>

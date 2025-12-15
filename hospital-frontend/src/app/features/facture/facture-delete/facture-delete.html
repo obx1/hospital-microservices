@@ -1,0 +1,18 @@
+<h2>Supprimer Facture</h2>
+
+<div class="delete-container">
+  <div class="warning-card">
+    <p class="warning-text">Voulez-vous vraiment supprimer la facture #{{ id }} ?</p>
+    <p class="warning-subtext">Cette action est irréversible.</p>
+  </div>
+
+  <div class="buttons">
+    <button class="btn-danger" (click)="delete()">
+      Oui, supprimer
+    </button>
+
+    <button class="btn-cancel" routerLink="/facture">
+      Annuler
+    </button>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Add button */
+.actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Card list */
+.list-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.list-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.info {
+  flex: 1;
+}
+
+.info h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.info p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.status {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.status.confirmed {
+  color: #28a745;
+}
+
+.status.pending {
+  color: #ffc107;
+}
+
+/* Action buttons */
+.item-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 400px;
+}
+
+.item-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.btn-warning {
+  background: #ffc107;
+  color: #333;
+}
+.btn-warning:hover {
+  background: #e0a800;
+}
+
+.btn-info {
+  background: #17a2b8;
+  color: white;
+}
+.btn-info:hover {
+  background: #138496;
+}
+
+.btn-danger {
+  background: #d9534f;
+  color: white;
+}
+.btn-danger:hover {
+  background: #b52b27;
+}
+
+/* Empty state */
+.empty-message {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  font-style: italic;
+}

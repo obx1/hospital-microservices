@@ -1,0 +1,18 @@
+<h2>Gestion des Documents</h2>
+
+<div class="documents-container">
+  <p>Dossier ID: {{ dossierId }}</p>
+
+  <div class="upload-section">
+    <h3>Ajouter un document</h3>
+    <input type="file" />
+    <button class="btn-primary">Télécharger</button>
+  </div>
+
+  <div class="documents-list">
+    <h3>Documents existants</h3>
+    <p class="empty-message">Aucun document disponible.</p>
+  </div>
+
+  <button class="btn-back" (click)="goBack()">Retour à la liste</button>
+</div>

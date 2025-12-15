@@ -1,0 +1,31 @@
+<h2>Modifier le compte</h2>
+
+<div class="form-container">
+  <form>
+    <!-- Empty state -->
+    <div *ngIf="fields.length === 0" class="empty-form">
+      Aucun champ à afficher pour l'instant.
+    </div>
+
+    <!-- Dynamic fields -->
+    <div class="form-group" *ngFor="let field of fields">
+      <label [for]="field">{{ field | titlecase }} :</label>
+      <input
+        [id]="field"
+        [name]="field"
+        [(ngModel)]="user[field]"
+        type="text"
+        class="form-input"
+      />
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="btn-primary" (click)="save()">
+        Enregistrer
+      </button>
+      <button type="button" class="btn-cancel" routerLink="/accounts">
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>

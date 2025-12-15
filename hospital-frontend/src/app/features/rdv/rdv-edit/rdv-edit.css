@@ -1,0 +1,88 @@
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn-primary {
+  flex: 1;
+  background: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-cancel {
+  flex: 1;
+  background: #6c757d;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn-cancel:hover {
+  background: #5a6268;
+}

@@ -1,0 +1,69 @@
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.cancel-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.warning-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-left: 4px solid #ffc107;
+}
+
+.warning-text {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.warning-subtext {
+  margin: 0;
+  color: #856404;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-warning {
+  background: #ffc107;
+  color: #333;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn-warning:hover {
+  background: #e0a800;
+}
+
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn-cancel:hover {
+  background: #5a6268;
+}

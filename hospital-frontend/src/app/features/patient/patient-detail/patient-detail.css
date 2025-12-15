@@ -1,0 +1,128 @@
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.detail-header {
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.patient-id {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.detail-body {
+  padding: 30px;
+}
+
+.detail-row {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  flex: 0 0 180px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.value {
+  flex: 1;
+  color: #333;
+  font-size: 14px;
+}
+
+.detail-actions {
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-cancel:hover {
+  background: #5a6268;
+}
+.loading-message {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-danger:disabled,
+.btn-cancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

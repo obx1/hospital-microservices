@@ -1,0 +1,70 @@
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  gap: 14px;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color .2s;
+}
+
+input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+/* Login button */
+.login-btn {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .2s;
+  margin-top: 8px;
+}
+
+.login-btn:hover {
+  background-color: #145ca3;
+}
+
+/* Forgot password link */
+.forgot-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}

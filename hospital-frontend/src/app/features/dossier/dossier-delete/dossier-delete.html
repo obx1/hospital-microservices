@@ -1,0 +1,16 @@
+<h2>Supprimer le dossier</h2>
+
+<div class="form-container">
+
+  <p class="warning">
+    Voulez-vous vraiment supprimer le dossier <strong>{{ id }}</strong> ?
+    <br>
+    Cette action est irréversible.
+  </p>
+
+  <div class="button-group">
+    <button class="delete" (click)="confirmDelete()">Supprimer</button>
+    <a class="cancel" routerLink="/dossier">Annuler</a>
+  </div>
+
+</div>

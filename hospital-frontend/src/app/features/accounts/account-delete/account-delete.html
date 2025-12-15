@@ -1,0 +1,18 @@
+<h2>Supprimer le compte</h2>
+
+<div class="delete-container">
+  <div class="warning-card">
+    <p class="warning-text">Voulez-vous vraiment supprimer le compte <strong>{{ username }}</strong> ?</p>
+    <p class="warning-subtext">Cette action est irréversible.</p>
+  </div>
+
+  <div class="buttons">
+    <button class="btn-danger" (click)="confirmDelete()">
+      Supprimer
+    </button>
+
+    <button class="btn-cancel" routerLink="/accounts">
+      Annuler
+    </button>
+  </div>
+</div>

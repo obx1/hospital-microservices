@@ -1,0 +1,28 @@
+<h2>Supprimer le rendez-vous</h2>
+
+<div class="delete-container">
+  <div class="warning-card">
+    <p class="warning-text">
+      Cette action est <strong>irréversible</strong>.
+    </p>
+    <p class="warning-subtext">
+      Confirmez-vous la suppression de ce rendez-vous ?
+    </p>
+  </div>
+
+  <div class="buttons">
+    <button class="btn-danger"
+            (click)="confirm()"
+            [disabled]="loading">
+      {{ loading ? 'Suppression...' : 'Supprimer définitivement' }}
+    </button>
+
+    <button class="btn-cancel" routerLink="/rdv">
+      Retour
+    </button>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+</div>
