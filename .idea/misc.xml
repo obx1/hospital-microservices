@@ -5,21 +5,26 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/config-server/config-server/pom.xml" />
-        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/../../api-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/patients-service/pom.xml" />
-        <option value="$PROJECT_DIR$/doctors-service/pom.xml" />
-        <option value="$PROJECT_DIR$/../appointments-service/pom.xml" />
-        <option value="$PROJECT_DIR$/appointments-service/pom.xml" />
-        <option value="$PROJECT_DIR$/../../billing-service/pom.xml" />
-        <option value="$PROJECT_DIR$/../../billing-service/billing-service/pom.xml" />
-        <option value="$PROJECT_DIR$/../../auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/discovery-server/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/billing-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/appointments-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/doctors-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/patients-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hospital-microservices/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/billing-service/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-server/pom.xml" />
+        <option value="$PROJECT_DIR$/patients-service/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="temurin-21" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="temurin-21" project-jdk-type="JavaSDK" />
 </project>
