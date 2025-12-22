@@ -1,0 +1,24 @@
+<div style="max-width: 900px; margin: 40px auto; padding: 20px;">
+  <div style="display:flex; justify-content: space-between; align-items:center;">
+    <h2>Dashboard</h2>
+    <button (click)="logout()">Se déconnecter</button>
+  </div>
+
+  <div style="margin-top: 20px; padding: 16px; border: 1px solid #ddd; border-radius: 10px;">
+    <h3>Utilisateur connecté</h3>
+    <p><b>Username:</b> {{ user?.username }}</p>
+    <p><b>Email:</b> {{ user?.email }}</p>
+    <p><b>Role:</b> {{ user?.role }}</p>
+  </div>
+
+  <div style="margin-top: 20px; padding: 16px; border: 1px solid #ddd; border-radius: 10px;">
+    <h3>Modules</h3>
+    <ul>
+      <li>Patients</li>
+      <li>Doctors</li>
+      <li>Appointments</li>
+      <li>Billing</li>
+      <li>Dossier</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div style="max-width:900px;margin:30px auto;">
+  <h2>Doctors</h2>
+
+  <div *ngIf="loading">Chargement...</div>
+  <div *ngIf="error" style="color:red;">{{ error }}</div>
+
+  <table *ngIf="!loading && !error" border="1" cellpadding="8" cellspacing="0" style="width:100%;">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Spécialité</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let d of data">
+      <td>{{ d.id }}</td>
+      <td>{{ d.name || d.fullName || d.nom }}</td>
+      <td>{{ d.specialty || d.specialite }}</td>
+      <td>{{ d.email }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

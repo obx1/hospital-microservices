@@ -1,0 +1,53 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            # AUTH (public)
+            - id: auth-route
+              uri: lb://auth-service
+              predicates:
+                  - Path=/api/auth/**
+
+            # PATIENTS
+            - id: patients-route
+              uri: lb://PATIENTS-SERVICE
+              predicates:
+                - Path=/patients/**
+              filters:
+                - RewritePath=/patients/?(?<segment>.*), /api/patients/${segment}
+
+            # DOCTORS
+            - id: doctors-route
+              uri: lb://DOCTORS-SERVICE
+              predicates:
+                - Path=/doctors/**
+              filters:
+                - RewritePath=/doctors/?(?<segment>.*), /api/doctors/${segment}
+
+            # APPOINTMENTS
+            - id: appointments-route
+              uri: lb://APPOINTMENTS-SERVICE
+              predicates:
+                - Path=/appointments/**
+              filters:
+                - RewritePath=/appointments/?(?<segment>.*), /appointments/${segment}
+
+            # BILLING
+            - id: billing-route
+              uri: lb://BILLING-SERVICE
+              predicates:
+                - Path=/billing/**
+              filters:
+                - RewritePath=/billing/?(?<segment>.*), /api/bills/${segment}
+
+# IMPORTANT: le gateway doit valider le token => même secret que auth-service
+jwt:
+  secret: "bXktc2VjcmV0LWtleS1mb3Itand0LWJhc2U2NC1sb25nLWVub3VnaC0xMjM0NTY="

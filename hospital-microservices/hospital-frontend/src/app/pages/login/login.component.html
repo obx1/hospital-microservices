@@ -1,0 +1,22 @@
+<div style="max-width: 420px; margin: 80px auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+  <h2 style="margin-bottom: 18px;">Connexion</h2>
+
+  <label>Username ou Email</label>
+  <input style="width: 100%; padding: 10px; margin: 6px 0 12px;"
+         [(ngModel)]="usernameOrEmail" />
+
+  <label>Mot de passe</label>
+  <input type="password"
+         style="width: 100%; padding: 10px; margin: 6px 0 12px;"
+         [(ngModel)]="password" />
+
+  <button (click)="submit()"
+          [disabled]="loading || !usernameOrEmail || !password"
+          style="width: 100%; padding: 10px;">
+    {{ loading ? 'Connexion...' : 'Se connecter' }}
+  </button>
+
+  <p *ngIf="errorMsg" style="color: red; margin-top: 12px;">
+    {{ errorMsg }}
+  </p>
+</div>

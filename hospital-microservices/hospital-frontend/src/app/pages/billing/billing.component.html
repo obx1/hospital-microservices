@@ -1,0 +1,25 @@
+<div style="max-width:900px;margin:30px auto;">
+  <h2>Billing / Invoices</h2>
+
+  <div *ngIf="loading">Chargement...</div>
+  <div *ngIf="error" style="color:red;">{{ error }}</div>
+
+  <table *ngIf="!loading && !error" border="1" cellpadding="8" cellspacing="0" style="width:100%;">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of data">
+      <td>{{ b.id }}</td>
+      <td>{{ b.amount || b.total }}</td>
+      <td>{{ b.description }}</td>
+      <td>{{ b.status }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

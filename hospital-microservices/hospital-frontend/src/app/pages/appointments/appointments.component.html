@@ -1,0 +1,27 @@
+<div style="max-width:1000px;margin:30px auto;">
+  <h2>Appointments</h2>
+
+  <div *ngIf="loading">Chargement...</div>
+  <div *ngIf="error" style="color:red;">{{ error }}</div>
+
+  <table *ngIf="!loading && !error" border="1" cellpadding="8" cellspacing="0" style="width:100%;">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>PatientId</th>
+      <th>DoctorId</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let a of data">
+      <td>{{ a.id }}</td>
+      <td>{{ a.date || a.appointmentDate || a.createdAt }}</td>
+      <td>{{ a.patientId || a.patient?.id }}</td>
+      <td>{{ a.doctorId || a.doctor?.id }}</td>
+      <td>{{ a.status }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: auth-service
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# JWT
+jwt:
+  secret: ZmFrZV9zZWNyZXRfa2V5X2l0X3Nob3VsZF9iZV9hdF9sZWFzdF8zMl9ieXRlcw
+  expiration-ms: 3600000
